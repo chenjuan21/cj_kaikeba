@@ -1,0 +1,24 @@
+<template>
+  <div>
+     <head/>
+     <form action="http://localhost:8081/reg" method="post">
+     用户:<input type="text"/><br>
+     密码:<input type="password"/>
+     <input type="submit" value="注册">
+      <a href="#/login">我要登录</a>
+     </form>
+     <foot/>
+  </div>
+</template>
+
+<script>
+import chead from "@/components/chead"
+import cfoot from "@/components/cfoot"
+  export default {
+    components:{chead,cfoot}
+  }
+</script>
+
+<style scoped>
+
+</style>

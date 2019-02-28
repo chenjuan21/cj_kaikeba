@@ -48,6 +48,19 @@
 
              })
          }
+         function Car(brand,color){
+	this.brand = brand;
+	this.color = color;
+	this.run = function(){
+	    console.log('running');
+	}
+}
+var newCar = {
+    displacemen:'3.0'
+};
+  Car.apply(newCar,['Benz','red']); //apply用的更多些
+  Car.call(newCar,'Benz','red');
+  console.log(newCar);
 </script>
 </body>
 </html>
