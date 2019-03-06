@@ -5,7 +5,8 @@
      用户:<input type="text"/><br>
      密码:<input type="password"/>
      <input type="submit" value="登录">
-     <a href="#/reg">我要注册</a>
+     <!-- <a href="#/reg">我要注册</a> -->
+     <router-link to="/reg">我要注册</router-link>
      </form>
      <cfoot/>
   </div>

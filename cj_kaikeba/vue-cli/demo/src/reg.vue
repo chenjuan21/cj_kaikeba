@@ -5,7 +5,7 @@
      用户:<input type="text"/><br>
      密码:<input type="password"/>
      <input type="submit" value="注册">
-      <a href="#/login">我要登录</a>
+      <router-link to="/">我要登录</router-link>
      </form>
      <foot/>
   </div>
