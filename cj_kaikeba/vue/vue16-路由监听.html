@@ -10,8 +10,8 @@
 </head>
 <body>
   <div id="div1">
-    <!-- <router-link :to="{name:'usr'}">用户1--信息</router-link>
-    <router-link to="/article">用户1--信息</router-link> -->
+    <router-link :to="{name:'usr'}">用户1--信息</router-link>
+    <router-link to="/article">用户1--信息</router-link>
     <router-view></router-view>
     <router-view name="a"></router-view>
     <router-view name="b"></router-view>
@@ -22,13 +22,21 @@
                  routes:[
                      {
                        path:'/user',
+                       name:'usr',
                        components:{
                          default:{template:'<div>用户</div>'}, 
                          a:{template:'<div>文章</div>'}, 
                          b:{template:'<div>留言</div>'}, 
+                       
 
                        }
                      },
+                     {
+                       path:'/article',
+                       component:{
+                         template:'<div>作者</div>'
+                       }
+                     }
                      
                  ]
              })
