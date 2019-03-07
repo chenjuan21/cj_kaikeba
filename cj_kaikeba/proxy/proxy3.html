@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+        let json ={a:12,b:5};
+    let p = new Proxy(json,{
+        get(target,key,proxy){
+            if(key in target){
+                return target[key];
+            }else{
+                //return "";
+                throw new Error("no this key");
+            }
+        },
+        set(target,key,val,proxy){
+        //  console.log(target,key,val,proxy);
+        },
+        has(target,key){
+          // console.log(target,key);
+        },
+        deleteProperty(target,key){
+           console.log(target,key);
+        }
+    })
+ console.log(p);
+ delete p.a;
+ console.log(p);
+  </script>
+</body>
+</html>
