@@ -14,8 +14,9 @@
             if(key in target){
                 return target[key];
             }else{
+                console.log(target,key,proxy);
                 //return "";
-                throw new Error("no this key");
+                // throw new Error("no this key");
             }
         },set(){
             alert("有人要考虑东西");
