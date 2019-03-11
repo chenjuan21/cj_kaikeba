@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let json = {a:12,b:5};
+        let _old_json ={};
+        for(var name in json){
+            console.log(name)
+            _old_json[name] = json[name];  //将json的值copy到_old_json
+        }
+      //json.a = 6;
+      delete json.b;
+        for(var name in _old_json){ //删除
+            if(!json[name]){
+                alert("删掉了"+name);
+            }else if(json[name]!=_old_json[name]){
+                alert("修改了："+name+",原来："+_old_json[name]);
+            }
+        }
+        for(var name in json){    //添加
+            if(!_old_json[name]){
+                alert("添加了："+name);
+            }
+        }
+    </script> 
+</body>
+</html>
