@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+      <app></app>
+     <!-- <login></login> -->
+     <!-- <router-link to="/login1">dfdfd</router-link> -->
+     <!-- <router-link to="/home">home</router-link>
+     <router-link to="/login">about</router-link> -->
+     <!-- <router-view></router-view> -->
+  </div>
+  <script src="vue.js"></script>
+  <script src="vue-router.js"></script>
+  <script>
+    var Login = {
+      template:'<div>我是登录页面</div>'
+    }
+    var about ={
+      template:'<div>关于我们</div>'
+    }
+    var Home = {
+		template:'<h3>我是主页</h3>',
+	};
+    const App = {
+      template:`
+      <div>
+        <router-view></router-view>
+      
+      </div>
+      `
+    }
+    Vue.use(VueRouter);
+     const router = new VueRouter({
+      routes:[
+      // { path:'/login1',compontent:Login },
+      // {path:'/home',component:Home},
+      {path:'/login',component:Login}
+    ]
+    });
+    new Vue({
+      el:"#app",
+      router:router,
+      components: {
+        'app':App
+     
+      }
+     // template:'</app>'
+    })
+  
+  </script>
+</body>
+</html>

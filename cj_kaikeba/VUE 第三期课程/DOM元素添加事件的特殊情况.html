@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <app></app>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    var TemComponent = {
+      template:`<div>
+        我是子组件
+        </div>
+      `
+    }
+    Vue.component('temp',TemComponent);
+    var App = {
+      template:`
+      <div>
+       <input type="text" v-if="isShow" ref="input"/>
+      </div>
+      `,
+      data () {
+        return {
+          isShow:false
+        }
+      },
+      mounted:function(){
+        //装载数据之后
+        this.isShow = true;
+        this.$nextTick(function(){ //vue真正渲染dom到页面以后才做的事
+          console.log(this.$refs.input.focus())
+        })
+      
+      }
+    }
+
+    var vm = new Vue({
+      el:"#app",
+      components: {'app':App},
+      // template:`</app>`
+    })
+  </script>
+</body>
+</html>

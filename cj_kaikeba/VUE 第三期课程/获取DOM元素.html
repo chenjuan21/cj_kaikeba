@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <app></app>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    var TemComponent = {
+      template:`<div>
+        我是子组件
+        </div>
+      `
+    }
+    Vue.component('temp',TemComponent);
+    var App = {
+      template:`
+      <div>
+        <temp ref="temp"/>
+        <button ref="btn">我是按钮</button>
+      </div>
+      `,
+      beforeCreate:function() {
+        //这里不能操作数据，只是初始化了事件
+      //  console.log(this.$refs.btn); undefined
+      },
+      created:function() {
+        //可以操作数据了
+     //   console.log(this.$refs.btn); undefined
+      },
+      beforeMount:function() {
+ //       console.log(this.$refs.btn); undefined
+        //new Vue发生装载 替换<div id="app">之前
+      },
+      mounted:function(){
+        //装载数据之后
+        console.log(this.$refs.btn);
+        console.log(this.$refs.temp);
+      }
+    }
+
+    var vm = new Vue({
+      el:"#app",
+      components: {'app':App},
+      // template:`</app>`
+    })
+  </script>
+</body>
+</html>
