@@ -4,19 +4,19 @@
      <router-view></router-view>
    <mt-tabbar v-model="selected">
   <mt-tab-item id="home">
-    <img slot="icon" src="./assets/logo.png">
+    <img slot="icon" @click="changeHash('home')" src="./assets/logo.png" >
        首页
   </mt-tab-item>
   <mt-tab-item id="member">
-    <img slot="icon" src="./assets/logo.png">
+    <img slot="icon" src="./assets/logo.png" @click="changeHash('member')">
     会员
   </mt-tab-item>
   <mt-tab-item id="shopcar">
-    <img slot="icon" src="./assets/logo.png">
+    <img slot="icon" src="./assets/logo.png" @click="changeHash('shopcar')">
     购物车
   </mt-tab-item>
   <mt-tab-item id="search">
-    <img slot="icon" src="./assets/logo.png">
+    <img slot="icon" src="./assets/logo.png" @click="changeHash('search')">
     查找
   </mt-tab-item>
 </mt-tabbar>
@@ -28,12 +28,21 @@ export default {
   name: 'App',
   data () {
     return {
-      selected:''
+      selected:'home'
     }
   },
   watch: {
-    selected(newV,oldV){
-      this.$router.push(newV);
+    // selected(newV,oldV){
+    //   console.log(newV);
+    //   this.$router.push(newV);
+    // }
+  },
+  methods: {
+    changeHash(name){
+      this.$nextTick(function(){
+         console.log(name);
+         this.$router.push({name:name})
+      })
     }
   }
 }
