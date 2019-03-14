@@ -1,22 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import cmp1 from '@/components/cmp1'
-import login from '@/login'
-import reg from '@/reg'
+import Home from '@/components/Home/home'
+import Member from '@/components/Member/menber'
+import Search from '@/components/Search/search'
+import Shopcar from '@/components/Shopcar/shopcar'
 
-Vue.use(Router)  //注册全局组件router-view router-linke  挂载在Vue.prototype.$router || $route 未来所有组件中的this对象，就具备该属性，所有的this其实就是Vue的子类对象
+
+Vue.use(Router)  
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'login',
-      component: login
+      path: '/home',
+      name: 'home',
+      component: Home
     },
     {
-      path: '/reg',
-      name: 'reg',
-      component: reg
+      path: '/member',
+      name: 'member',
+      component: Member
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
+    {
+      path: '/shopcar',
+      name: 'shopcar',
+      component: Shopcar
     }
   ]
 })

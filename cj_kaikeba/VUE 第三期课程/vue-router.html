@@ -8,22 +8,22 @@
 </head>
 <body>
   <div id="app">
-      <app></app>
+      <!-- <app></app> -->
      <!-- <login></login> -->
-     <!-- <router-link to="/login1">dfdfd</router-link> -->
-     <!-- <router-link to="/home">home</router-link>
-     <router-link to="/login">about</router-link> -->
-     <!-- <router-view></router-view> -->
+     <!-- <router-link to="/about">about</router-link> -->
+     <router-link :to="{path:'/home',query:{id:1}}">home</router-link>
+      <router-link to="/login">about</router-link>
+     <router-view></router-view>
   </div>
   <script src="vue.js"></script>
   <script src="vue-router.js"></script>
   <script>
     var Login = {
       template:'<div>我是登录页面</div>'
-    }
+    };
     var about ={
       template:'<div>关于我们</div>'
-    }
+    };
     var Home = {
 		template:'<h3>我是主页</h3>',
 	};
@@ -38,8 +38,8 @@
     Vue.use(VueRouter);
      const router = new VueRouter({
       routes:[
-      // { path:'/login1',compontent:Login },
-      // {path:'/home',component:Home},
+      { path:'/about',compontent:about },
+      {path:'/home',component:Home},
       {path:'/login',component:Login}
     ]
     });
