@@ -65,14 +65,14 @@
                                                         <select class="city">
                                                             <option>请选择二级分类</option>
                                                         </select>
-                                                        <select class="city" style="display:none">
+                                                        <select class="city" style="display:block">
                                                             <option>互联网金融</option>
                                                             <option>干货</option>
                                                             <option>电子商务</option>
                                                             <option>互联网+</option>
                                                             <option>物联网</option>
                                                         </select>
-                                                        <select class="city" style="display:none">
+                                                        <select class="city" style="display:block">
                                                             <option>人机交互</option>
                                                             <option>AR</option>
                                                             <option>虚拟现实</option>
@@ -104,7 +104,7 @@
                                                 <div class="aui-card-form-item preview  aui-news">
                                                     <label class="aui-card-form-label">封面:</label>
                                                     <div class="aui-file-up-img" id="preview_0">
-                                                        <img class="" id="imghead_0" border="0" src="admin/images/icon/noimg.gif">
+                                                        <img class="" id="imghead_0" border="0" src="../assets/images/icon/noimg.gif">
                                                     </div>
                                                     <div class="aui-file-up-btn clearfix ">
                                                         <div class="idPicFile aui-btn aui-file-new">
@@ -145,7 +145,7 @@
                                             <div class="aui-card-form-item preview  aui-news" style="margin-top:20px;">
                                                 <label class="aui-card-form-label">封面:</label>
                                                 <div class="aui-file-up-img" id="preview_0">
-                                                    <img class="" id="imghead_0" border="0" src="admin/images/icon/noimg.gif">
+                                                    <img class="" id="imghead_0" border="0" src="../assets/images/icon/noimg.gif">
                                                 </div>
                                                 <div class="aui-file-up-btn clearfix ">
                                                     <div class="idPicFile aui-btn aui-file-new">

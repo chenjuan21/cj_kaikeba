@@ -2,18 +2,13 @@
   <div class="ydc-tabPanel ydc-tabPanel-release">
                                 <div class="ydc-release-tab-head">
                                     <ul>
-                                        <li class="hit" v-for ="(item,index) in tabs" :class="in                                                        "，，，， > {{item}}</li>
-                                      
-
+                                        <li v-for="(item,index) in tabs" :class="index==cur?'hit':''" :key="index" @click="cur=index"> {{item.title}}</li>
                                     </ul>
                                   <slot name="amount"></slot>
                                 </div>
                                 <div class="ydc-panes">
-                                    <div class="ydc-pane" style="display:block;">
-                                      <slot name="tab1"></slot>
-                                    </div>
-                                    <div class="ydc-pane">
-                                       <slot name="tab2"></slot>
+                                    <div v-for="(item,index) in tabs" :key="index"  class="ydc-pane" :style="{display:index==cur?'block':'none'}" >
+                                      <slot :name="item.slotname"></slot>
                                     </div>
                                 </div>
                             </div>  
@@ -21,7 +16,12 @@
 <script>
 export default {
     name:"tabPanel",
-    props: ['tabs']
+    props: ['tabs'],
+    data () {
+      return {
+        cur:0
+      }
+    }
 }
 </script>
 <style>
