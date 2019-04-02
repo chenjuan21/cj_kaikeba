@@ -8,7 +8,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/',
+      path:'/index',
       name:'index',
       component:Index
       
@@ -16,6 +16,60 @@ export default new Router({
     {
       path:'/release',
       name:'release',
+      component:release
+      
+    },
+    {
+      path:'/content',
+      name:'content',
+      component:release
+      
+    },
+    {
+      path:'/related',
+      name:'related',
+      component:release
+      
+    },
+    {
+      path:'/asset',
+      name:'asset',
+      component:release
+      
+    },
+    {
+      path:'/subscribe',
+      name:'subscribe',
+      component:release
+      
+    },
+    {
+      path:'/contentData',
+      name:'contentData',
+      component:release
+      
+    },
+    {
+      path:'/starLevel',
+      name:'starLevel',
+      component:release
+      
+    },
+    {
+      path:'/info',
+      name:'info',
+      component:release
+      
+    },
+    {
+      path:'/account',
+      name:'account',
+      component:release
+      
+    },
+    {
+      path:'/line',
+      name:'line',
       component:release
       
     },
