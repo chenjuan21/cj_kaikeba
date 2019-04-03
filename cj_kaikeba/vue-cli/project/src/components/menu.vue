@@ -7,11 +7,11 @@
                                         {{menu.title}}
                                     </router-link>
                                     <div v-else>
-                                      <span class="ydc-menu-sub-title"  @click="show(index)">
+                                      <span class="ydc-menu-sub-title"   @click="cur=index">
                                         <i :class="['ydc-icon',menu.icon,'fl']"></i>
                                         {{menu.title}}
                                     </span>
-                                    <ul>
+                                    <ul :class="cur==index?'show':'hide'">
                                         <li v-for="(item,index) in menu.children" :key="index">
                                             <router-link :to="item.to.name">{{item.title}}</router-link>
                                         </li>
@@ -47,7 +47,7 @@ export default {
                       {to:{name:'line',params:{}},title:'在线咨询'},
                 ]},
             ],
-            flag:[],
+            cur:0,
           
         }
     },
@@ -64,6 +64,12 @@ export default {
 .ydc-menu .ydc-menu-item .router-link-active {
     background: #ff6565;
     color: #fff;
+}
+.show{
+    display: block;
+}
+.hide{
+    display:none;
 }
     
 </style>
