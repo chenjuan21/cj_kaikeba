@@ -7,11 +7,10 @@
 
 									</div>
 									<div class="ydc-panes">
-										<div class="ydc-pane" :style="{display:index==cur?'block':'none'}">
+										<div class="ydc-pane" v-for="(data,index) in datas" :key="index" :style="{display:index==cur?'block':'none'}">
 											<ol class="ydc-pane-list">
 												<li v-for="(news,index) in data.data" :key="index"> 
-													<router-link
-													 target="_blank">{{news.title}}<i v-if="news.isNew==true"> new</i></router-link>
+													<router-link :to="{name:'release'}">{{news.title}}<i v-if="news.isNew==true"> new</i></router-link>
 													<span>{{news.time}}</span>
 												</li>
 											</ol>

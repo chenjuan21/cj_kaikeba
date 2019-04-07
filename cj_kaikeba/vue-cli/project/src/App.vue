@@ -1,5 +1,9 @@
 <template>
 <div>
+  <div v-if="$route.name=='login' || $route.name=='reg'">
+      <router-view/>
+    </div>
+     <div v-if="$route.name!='login' && $route.name!='reg'">
    <Header/>
      <section>
             <div class="ydc-content-slide ydc-body">
@@ -18,6 +22,7 @@
             </div>
             <Footer/>
         </section>
+     </div>
 </div>
   
    
@@ -27,12 +32,14 @@
 import Header from '@/components/header.vue'
 import Menu from '@/components/menu.vue'
 import Footer from '@/components/footer.vue'
+import Login from '@/page/login.vue'
 export default {
   name: 'App',
   components: {
     Header,
     Menu,
-    Footer
+    Footer,
+    Login
   }
   
 }

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import chead from "@/components/chead"
-import cfoot from "@/components/cfoot"
+import chead from "@/components/header"
+import cfoot from "@/components/footer"
   export default {
     components:{chead,cfoot}
   }

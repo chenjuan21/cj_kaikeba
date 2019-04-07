@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index.vue'
 import release from '@/page/release.vue'
+import Login from '@/page/login';
+import Reg from '@/page/reg';
 
 Vue.use(Router)  
 
@@ -73,6 +75,16 @@ export default new Router({
       component:release
       
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/reg',
+      name: 'reg',
+      component: Reg
+    }
     
   ]
 })
