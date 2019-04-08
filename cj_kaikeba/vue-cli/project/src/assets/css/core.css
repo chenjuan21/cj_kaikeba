@@ -277,12 +277,15 @@ input:focus,textarea:focus {
 	width: 26px;
 	height: 26px;
 	margin-top: 46px;
-	background-image: url("/admin/images/icon/input-unchecked.png");
+	background-image: url("../images/icon/input-unchecked.png");
 	vertical-align: middle;
 	background-size: cover;
 	background-position:center;
 	background-repeat:no-repeat;
 	margin-left: 70px;
+}
+.checked .check-image{
+	background-image: url("../images/icon/input-checked.png");
 }
 
 .unchecked {

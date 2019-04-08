@@ -1,13 +1,13 @@
 <template>
   <div>
-     <head/>
+     <chead/>
      <form action="http://localhost:8081/reg" method="post">
      用户:<input type="text"/><br>
      密码:<input type="password"/>
      <input type="submit" value="注册">
       <router-link to="/">我要登录</router-link>
      </form>
-     <foot/>
+     <cfoot/>
   </div>
 </template>
 

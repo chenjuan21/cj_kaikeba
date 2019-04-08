@@ -42,7 +42,18 @@
 </template>
 
 <script>
+import chead from "@/components/header"
+import cfoot from "@/components/footer"
 export default {
+  data () {
+    return {
+      
+    }
+  },
+  components:{
+    chead,
+    cfoot
+  }
 }
 </script>
 

@@ -1,9 +1,9 @@
 <template>
 <div>
-  <div v-if="$route.name=='login' || $route.name=='reg'">
+  <div v-if="$route.name=='login' || $route.name=='goreg' || $route.name=='gouser'">
       <router-view/>
     </div>
-     <div v-if="$route.name!='login' && $route.name!='reg'">
+     <div v-if="$route.name!='login' && $route.name!='goreg' && $route.name!='gouser'">
    <Header/>
      <section>
             <div class="ydc-content-slide ydc-body">

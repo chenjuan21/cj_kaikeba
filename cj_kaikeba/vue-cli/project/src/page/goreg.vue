@@ -1,6 +1,7 @@
 <template>
 <div>
-        <section>
+	<!-- <chead/> -->
+    <section>
 		<div class="ydc-content-slide ydc-body">
 			<div class="ydc-page-content" style="overflow:hidden">
 				<div class="ydc-reg-title">
@@ -49,30 +50,52 @@
 				<div class="ydc-right-banner" style="margin-top:80px;">
 					<div class="slideshow-container">
 						<a href="https://xihazahuopu.taobao.com/" target="_blank" class="mySlides fade">
-							<img src="admin/images/ad/ad1.jpg" style="width:100%">
+							<img src="../assets/images/ad/ad1.jpg" style="width:100%">
 						</a>
 						<a href="https://weibo.com/525135676" target="_blank" class="mySlides fade">
-							<img src="admin/images/ad/ad2.jpg" style="width:100%">
+							<img src="../assets/images/ad/ad2.jpg" style="width:100%">
 						</a>
 						<a href="http://www.a-ui.cn/" target="_blank" class="mySlides fade">
-							<img src="admin/images/ad/ad3.jpg" style="width:100%">
+							<img src="../assets/images/ad/ad3.jpg" style="width:100%">
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="ydc-footer">
-			<div>
-				<p>©2018 一点车版权所有About 公司简介  联系方法  招聘信息  客户服务  隐私政策  广告服务  网站地图  意见反馈  不良信息举报</p>
-			</div>
-		</div>
+		<cfoot/>
 	</section>
 </div>
 
 </template>
 <script>
+import chead from "@/components/header"
+import cfoot from "@/components/footer"
 export default {
-    
+  data () {
+    return {
+      slideIndex:0
+    }
+  },
+  components:{
+    chead,
+    cfoot
+	},
+	methods: {
+		showSlides:function(){
+			 var i;
+	        var slides = document.getElementsByClassName("mySlides");
+	        for (i = 0; i < slides.length; i++) {
+	            slides[i].style.display = "none";
+	        }
+	        this.slideIndex++;
+	        if (this.slideIndex> slides.length) {this.slideIndex = 1}
+	        slides[this.slideIndex-1].style.display = "block";
+	        setTimeout(this.showSlides, 3000); // 滚动时间
+		}
+	},
+	mounted () {
+		this.showSlides();
+	}
 }
 </script>
 <style>

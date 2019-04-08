@@ -4,6 +4,8 @@ import Index from '@/page/index.vue'
 import release from '@/page/release.vue'
 import Login from '@/page/login';
 import Reg from '@/page/reg';
+import goReg from '@/page/goreg';
+import goRegUsername from '@/page/go-reg-username';
 
 Vue.use(Router)  
 
@@ -84,6 +86,16 @@ export default new Router({
       path: '/reg',
       name: 'reg',
       component: Reg
+    },
+    {
+      path: '/goReg',
+      name: 'goreg',
+      component: goReg
+    },
+    {
+      path: '/goRegUser',
+      name: 'gouser',
+      component: goRegUsername
     }
     
   ]
