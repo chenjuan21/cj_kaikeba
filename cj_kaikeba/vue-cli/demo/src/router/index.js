@@ -6,7 +6,7 @@ import Search from '@/components/Search/search'
 import Shopcar from '@/components/Shopcar/shopcar'
 import NewList from '@/components/News/NewList'
 import NewsDetail from '@/components/News/NewsDetail'
-
+import PhotoList from '@/components/Photo/PhotoList'
 
 Vue.use(Router)  
 
@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path:'/',
-      redirect:{name:'home'},
+      redirect:{name:'home'}
     },
     {
       path: '/home',
@@ -46,6 +46,11 @@ export default new Router({
       name:'news.detail',
       path:'/news/detail',
       component:NewsDetail
+    },
+    {
+       name:'photo.list',
+       path:'/photo/:categoryId',
+       component:PhotoList
     }
   ]
 })

@@ -1,9 +1,7 @@
 <template>
   <div>
   <mt-swipe :auto="4000">
-  <mt-swipe-item>1</mt-swipe-item>
-  <mt-swipe-item>2</mt-swipe-item>
-  <mt-swipe-item>3</mt-swipe-item>
+  <mt-swipe-item v-for="(img,index) in imgs" :key="index"><img :src="img.img" width="100%"/></mt-swipe-item>
 </mt-swipe>
 <div class="grid">
   <my-ul>
@@ -15,53 +13,16 @@
     </my-li>
   </my-ul>
 </div>
-<!-- <ul>
-  <li>
-    <a href="">
-      <span class="cms-news"></span>
-      <div>新闻资讯1</div>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <span class="cms-news"></span>
-      <div>新闻资讯2</div>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <span class="cms-news"></span>
-      <div>新闻资讯3</div>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <span class="cms-news"></span>
-      <div>新闻资讯4</div>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <span class="cms-news"></span>
-      <div>新闻资讯5</div>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <span class="cms-news"></span>
-      <div>新闻资讯6</div>
-    </a>
-  </li>
-</ul> -->
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      imgs:[],
       grids:[
         {className:'cms-news',title:'新闻资讯1',router:{name:'news'}},
-        {className:'cms-news',title:'新闻资讯2',router:{name:'news'}},
+        {className:'cms-news',title:'图文分享',router:{name:'photo.list',params:{categoryId:0}}},
         {className:'cms-news',title:'新闻资讯3',router:{name:'news'}},
         {className:'cms-news',title:'新闻资讯4',router:{name:'news'}},
         {className:'cms-news',title:'新闻资讯5',router:{name:'news'}},
@@ -70,15 +31,21 @@ export default {
     }
   },
   created() {
-    // this.$axios.get('https://wd2803780772aaeyif.wilddogio.com/')
-    // .then(res =>{
-
-    // })
-    // .catch(err => console.log('轮播图获取异常',err));
+    this.$axios.get('http://localhost:3000/list')
+    .then(res =>{
+      this.imgs = res.data 
+    })
+    .catch(err => console.log('轮播图获取异常',err));
   },
 }
 </script>
 <style scoped>
+*{
+  margin: 0; padding: 0;
+}
+.grid{
+  margin-top: 20px;
+}
 .mint-swipe{
   height: 200px
 }

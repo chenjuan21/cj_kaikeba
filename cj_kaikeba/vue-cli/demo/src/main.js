@@ -19,6 +19,7 @@ Vue.component(NavBar.name,NavBar);
 
 //定义moment全局日历过滤器
 import Moment from 'moment';
+// {{'xxx' | convertTime}}
 Vue.filter('convertTime',function(data,formatStr){
   return Moment(data).format(formatStr);
 })

@@ -32,18 +32,18 @@ export default {
     }
   },
   watch: {
-    // selected(newV,oldV){
-    //   console.log(newV);
-    //   this.$router.push(newV);
-    // }
+  //   selected(newV,oldV){
+  //     console.log(newV);
+  //     this.$router.push({name:newV});
+  //   }
   },
   methods: {
-    changeHash(name){
+     changeHash(name){  
       this.$nextTick(function(){
          console.log(name);
          this.$router.push({name:name})
       })
-    }
+     }
   }
 }
 </script>
@@ -56,5 +56,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.mint-tabbar{
+  position: fixed !important;
 }
 </style>

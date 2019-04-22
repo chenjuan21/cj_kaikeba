@@ -4,7 +4,7 @@
      <ul>
        <li v-for="list in newlist" :key="list.id">
          <router-link :to="{name:'news.detail',query:{id:list.id}}">
-           {{list.text}}{{time|convertTime('YYYY-MM-DD')}}
+           {{list.text}}{{time|convertTime('YYYY-MM-DD')}}  //时间过滤器
          </router-link>
       </li>
       

@@ -12,14 +12,13 @@
      <!-- <login></login> -->
      <!-- <router-link to="/login1">dfdfd</router-link> -->
      <router-link :to="{path:'/home',query:{id:1}}">home</router-link>
-     <router-link :to="{path:'/about',params:{name:'abc'}}">about</router-link>
+     <router-link :to="{path:'/about'}">about</router-link>
      <router-view></router-view>
   </div>
   <script src="vue.js"></script>
   <script src="vue-router.js"></script>
   <script>
    
-    console.log(1,2);
     var Login = {
       template:'<div>我是登录页面</div>'
     }
@@ -47,7 +46,7 @@
      const router = new VueRouter({
       routes:[
       {path:'/home',component:Home},
-      { path:'/about:name',compontent:about },
+      { path:'/about',compontent:about },
       // {path:'/login',component:Login}
     ]
     });
