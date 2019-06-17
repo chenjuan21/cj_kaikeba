@@ -34,9 +34,10 @@
       mounted:function(){
         //装载数据之后
         this.isShow = true;
-        this.$nextTick(function(){ //vue真正渲染dom到页面以后才做的事
-          console.log(this.$refs.input.focus())
-        })
+         this.$nextTick(function(){ //vue真正渲染dom到页面以后才做的事
+           this.$refs.input.focus();
+         })
+      
       
       }
     }
