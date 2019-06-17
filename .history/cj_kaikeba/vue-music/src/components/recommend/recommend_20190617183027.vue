@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import {getRecommend} from '@/api/recommend.js'
+import {getRecommend} from 'api/recommend.js'
 import {ERR_OK} from 'api/config.js'
 export default {
   created () {

@@ -10,21 +10,21 @@
   </div>
 </template>
 <script>
-import {getRecommend} from '@/api/recommend.js'
-import {ERR_OK} from 'api/config.js'
+// import {getRecommend} from 'api/recommend.js'
+// import {ERR_OK} from 'api/config.js'
 export default {
-  created () {
-    this._getCommend()
-  },
-  methods: {
-    _getCommend(){
-      getRecommend().then((res)=>{
-        if(res.code === ERR_OK){
-          console.log(res.data.slider);
-        }
-      })
-    }
-  }
+  // created () {
+  //   this._getCommend()
+  // },
+  // methods: {
+  //   _getCommend(){
+  //     getRecommend().then((res)=>{
+  //       if(res.code === ERR_OK){
+  //         console.log(res.data.slider);
+  //       }
+  //     })
+  //   }
+  // }
   
 }
 </script>
