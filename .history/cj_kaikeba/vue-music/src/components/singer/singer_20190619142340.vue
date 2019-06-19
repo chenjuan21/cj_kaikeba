@@ -1,13 +1,10 @@
 <template>
-  <div class="singer">
-    <list-view :data="singers"></list-view>
-  </div>
+  <div>歌手页面</div>
 </template>
 <style>
 
 </style>
 <script>
- import ListView from '@/base/listview/listview'
  import {getSingerList} from 'api/singer'
   import {ERR_OK} from 'api/config'
     import Singer from 'common/js/singer'
@@ -80,9 +77,6 @@ export default {
         return hot.concat(ret)
       },
       
-    },
-    components: {
-      ListView
     }
 }
 </script>

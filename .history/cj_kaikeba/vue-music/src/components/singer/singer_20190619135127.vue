@@ -1,13 +1,10 @@
 <template>
-  <div class="singer">
-    <list-view :data="singers"></list-view>
-  </div>
+  <div>歌手页面</div>
 </template>
 <style>
 
 </style>
 <script>
- import ListView from '@/base/listview/listview'
  import {getSingerList} from 'api/singer'
   import {ERR_OK} from 'api/config'
     import Singer from 'common/js/singer'
@@ -27,10 +24,9 @@ export default {
         getSingerList().then((res) => {
           if (res.code === ERR_OK) {
             this.singers = res.data.list;
-         //  console.log(this.singers);
-            this.singers = this._normalizeSinger(res.data.list)
             console.log(this.singers);
-           //  this._normalizeSinger(res.data.list)
+            // this.singers = this._normalizeSinger(res.data.list)
+             this._normalizeSinger(res.data.list)
           }
         })
       },
@@ -49,7 +45,7 @@ export default {
             }))
           }
           const key = item.Findex
-         // console.log(map);
+          console.log(map);
           if (!map[key]) {
             map[key] = {
               title: key,
@@ -61,10 +57,9 @@ export default {
             id: item.Fsinger_mid
           }))
         })
-        // 为了得到有序列表，我们需要处理 map
+         // 为了得到有序列表，我们需要处理 map
         let ret = []
         let hot = []
-      //  console.log(map);
         for (let key in map) {
           let val = map[key]
           if (val.title.match(/[a-zA-Z]/)) {
@@ -73,16 +68,12 @@ export default {
             hot.push(val)
           }
         }
-        //console.log(ret);
         ret.sort((a, b) => {
           return a.title.charCodeAt(0) - b.title.charCodeAt(0)
         })
         return hot.concat(ret)
       },
       
-    },
-    components: {
-      ListView
     }
 }
 </script>

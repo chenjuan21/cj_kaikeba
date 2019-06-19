@@ -1,7 +1,5 @@
 <template>
-  <div class="singer">
-    <list-view :data="singers"></list-view>
-  </div>
+  <div>歌手页面</div>
 </template>
 <style>
 

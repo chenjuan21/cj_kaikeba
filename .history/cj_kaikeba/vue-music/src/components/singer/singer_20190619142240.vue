@@ -1,13 +1,10 @@
 <template>
-  <div class="singer">
-    <list-view :data="singers"></list-view>
-  </div>
+  <div>歌手页面</div>
 </template>
 <style>
 
 </style>
 <script>
- import ListView from '@/base/listview/listview'
  import {getSingerList} from 'api/singer'
   import {ERR_OK} from 'api/config'
     import Singer from 'common/js/singer'
@@ -49,7 +46,7 @@ export default {
             }))
           }
           const key = item.Findex
-         // console.log(map);
+          console.log(map);
           if (!map[key]) {
             map[key] = {
               title: key,
@@ -73,16 +70,13 @@ export default {
             hot.push(val)
           }
         }
-        //console.log(ret);
+        console.log(ret);_
         ret.sort((a, b) => {
           return a.title.charCodeAt(0) - b.title.charCodeAt(0)
         })
         return hot.concat(ret)
       },
       
-    },
-    components: {
-      ListView
     }
 }
 </script>
